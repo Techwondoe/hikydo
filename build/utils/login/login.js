@@ -37,7 +37,7 @@ const server_1 = require("./server");
 const yargs = __importStar(require("yargs"));
 yargs
     .showHelpOnFail(true)
-    .command('auth', 'Login to the application', (argv) => __awaiter(void 0, void 0, void 0, function* () {
+    .command('*', 'Login to the application', (argv) => __awaiter(void 0, void 0, void 0, function* () {
     yield (0, server_1.start)();
 })).demandCommand()
     .help()

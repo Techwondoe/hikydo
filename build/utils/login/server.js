@@ -56,11 +56,10 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
         res.sendFile(path_1.default.join(__dirname, './html_pages/callback.html'));
     });
     app.get('/', function (req, res) {
-        var _a, _b;
+        var _a;
         const idToken = (_a = req.query) === null || _a === void 0 ? void 0 : _a.id_token;
-        if ((_b = req.query) === null || _b === void 0 ? void 0 : _b.error_description.contains(""))
-            createFile(String(idToken));
-        console.log(`Access token has been fetched. Press control + c and type kydos`);
+        createFile(String(idToken));
+        console.log(`Access token has been fetched. Please press control + c now.`);
         res.send();
     });
     const server = app.listen(port, function () {

@@ -5,7 +5,7 @@ import * as yargs from 'yargs';
 
 yargs
   .showHelpOnFail(true)
-  .command('auth', 'Login to the application', async (argv) => {
+  .command('*', 'Login to the application', async (argv) => {
     await start()
   }).demandCommand()
   .help()

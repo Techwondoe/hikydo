@@ -24,9 +24,8 @@ export const start = async () => {
 
     app.get('/', function (req, res) {
         const idToken = req.query?.id_token;
-        if (req.query?.error_description.contains(""))
         createFile(String(idToken))
-        console.log(`Access token has been fetched. Press control + c and type kydos`);        
+        console.log(`Access token has been fetched. Please press control + c now.`);
         res.send();
     });
 
