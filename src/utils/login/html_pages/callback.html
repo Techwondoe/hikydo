@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Logged In</title>
+</head>
+
+<body>
+
+    <h3>All done. You can close the browser and go back to the CLI now. You should be all logged in.</h3>
+
+    <script>
+      const hash = window.location.hash;
+      url_fragment = hash.replace('#', '?')
+  
+      if (hash.length > 0 && hash.includes('#')) {
+        url_fragment = hash.replace('#', '?');
+        console.log(httpGet("/"+ url_fragment))
+      }
+  
+      function httpGet(theUrl) {
+        let xmlHttpReq = new XMLHttpRequest();
+        xmlHttpReq.open("GET", theUrl, false);
+        xmlHttpReq.send(null);
+        return xmlHttpReq.responseText;
+      }
+    </script>
+  </body>
+</html>

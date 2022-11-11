@@ -1,0 +1,52 @@
+{
+  "name": "@twd/kydos",
+  "version": "2.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "commonjs",
+  "target": "ES2020",
+  "scripts": {
+    "build": "rimraf ./build && yarn tsc && yarn copy-files && yarn chmod",
+    "chmod": "chmod u+x ./build/main.js",
+    "lint": "eslint . --ext .ts",
+    "copy-files": "cp -r ./src/utils/login/html_pages ./build/utils/login/html_pages/",
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "package": "pkg . --targets node16-macos-x64 --output kydos"
+  },
+  "bin": {
+    "kydos": "./build/main.js",
+    "kydos-login": "./build/utils/login/login.js"
+  },
+  "pkg": {
+    "scripts": ["build/**/*.js", "build/**/*.html"] 
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.11.2",
+    "@types/winston": "^2.4.4",
+    "@types/yargs": "^17.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.25.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^8.0.1",
+    "pkg": "^5.8.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4",
+    "@types/express": "^4.17.14",
+    "express": "^4.18.2",
+    "open": "^8.4.0"
+  },
+  "dependencies": {
+    "axios": "^1.1.3",
+    "fs-extra": "^10.1.0",
+    "ora": "^6.1.2",
+    "path": "^0.12.7",
+    "prettier": "^2.7.1",
+    "swagger-parser": "^10.0.3",
+    "winston": "^3.8.2",
+    "yargs": "^17.6.0"
+  }
+}
